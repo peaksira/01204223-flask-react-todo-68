@@ -89,4 +89,5 @@ describe('TodoItem', () => {
     // assert
     expect(onAddNewComment).toHaveBeenCalledWith(baseTodo.id, 'New comment');
   });
+
 });
