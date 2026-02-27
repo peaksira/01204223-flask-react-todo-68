@@ -100,8 +100,11 @@ def toggle_todo(id):
 @jwt_required()
 def delete_todo(id):
     todo = TodoItem.query.get_or_404(id)
+    Comment.query.filter_by(todo_id=id).delete()
+
     db.session.delete(todo)
     db.session.commit()
+
     return jsonify({'message': 'Todo deleted successfully'})
 @app.route('/api/todos/<int:todo_id>/comments/', methods=['POST'])
 @jwt_required()

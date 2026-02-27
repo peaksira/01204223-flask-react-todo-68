@@ -25,7 +25,7 @@ function LoginForm({loginUrl}) {
         console.log(data);
         alert("Login successful.  access token = " + data.access_token);
         login(username, data.access_token);
-        login(username, data.access_token);
+        
         navigate("/");
 
       } else if (response.status === 401) {
