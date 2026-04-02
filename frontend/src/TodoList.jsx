@@ -41,9 +41,7 @@ function TodoList({apiUrl}) {
     try {
       const response = await fetch(toggle_api_url, {
         method: 'PATCH',
-        headers: {
-          'Authorization': `Bearer ${accessToken}`
-        }
+
       })
       if (response.ok) {
         const updatedTodo = await response.json();
